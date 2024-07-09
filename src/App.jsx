@@ -5,18 +5,22 @@ import { NavBar } from './components/NavBar'
 
 export function App() {
 
-  const Click = () =>{
-    console.log("hola chanvales")
+  const Click = (mensaje) =>{
+    return () => {
+      console.log(mensaje)
+    }
   }
 
   return (
     <>
       <NavBar />
-      <ItemListContainer saludo="Buenos dias/tardes/noches" />
-      <Button texto="botoncito rojo" color="red" funcion={Click} />
-      <Button texto="botoncito azul" color="green" funcion={Click} />
+      <ItemListContainer saludo="Buenos dias/tardes/noches, como se encuentra el dia de hoy?" />
+      <Button texto="Joya" color="green" funcion={Click("Me alegra que estes bien!")} />
+      <Button texto="Regular" color="yellow" funcion={Click("Hay que mirar siempre el vaso medio lleno!")} />
+      <Button texto="Mal" color="red" funcion={Click("Lo malo es pasajero!")} />
     </>
   )
+  
 }
 
 export default App;
